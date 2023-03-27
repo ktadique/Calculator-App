@@ -9,7 +9,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./assets/images/favicon-32x32.png"
     />
 
     <link
@@ -18,21 +18,56 @@
       href="./assets/styles/calculator.css"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Kirsten T. | Calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    <div class="container">
+    <div class="background">
       <div class="calculator">
         <div class="calcHeader">
-          <div class="logo">calc</div>
-          <div class="themeSwitch">
+          <div class="themeSwitcher">
             <div class="label">THEME</div>
-            <div class="switch"></div>
+            <div class="switchWrapper">
+              <div class="themeNum">
+                <label for="t1" class="th">1</label
+                ><label for="t2" class="th">2</label
+                ><label for="t3" class="th">3</label>
+              </div>
+              <div class="toggleBar">
+                <input
+                  class="toggleOption"
+                  type="radio"
+                  name="toggleOption"
+                  id="t1"
+                />
+                <input
+                  class="toggleOption"
+                  type="radio"
+                  name="toggleOption"
+                  id="t2"
+                />
+                <input
+                  class="toggleOption"
+                  type="radio"
+                  name="toggleOption"
+                  id="t3"
+                />
+                <div class="toggleSlider"></div>
+              </div>
+            </div>
           </div>
-          <div class="calcScreen">1447</div>
+          <div class="logo">calc</div>
         </div>
+        <div class="calcScreen">1447,744</div>
+
         <div class="calcBody">
           <button class="btn" id="btn-1">1</button>
           <button class="btn" id="btn-2">2</button>
@@ -55,6 +90,7 @@
         </div>
       </div>
     </div>
+
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
