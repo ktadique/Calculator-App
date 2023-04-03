@@ -4,12 +4,17 @@
   --screen-bg: hsl(224, 36%, 15%);
   --txtkey-bg: hsl(225, 21%, 49%);
   --txtkey-shadow: hsl(224, 28%, 35%);
+  --txtkey-hover: hsl(225, 21%, 59%);
   --eqkey-bg: hsl(6, 63%, 50%);
   --eqkey-shadow: hsl(6, 70%, 34%);
+  --eqkey-hover: hsl(6, 63%, 60%);
   --key-bg: hsl(30, 25%, 89%);
   --key-shadow: hsl(28, 16%, 65%);
-  --white: hsl(0, 0%, 100%);
-  --grayish-blue: hsl(221, 14%, 31%);
+  --key-hover: hsl(30, 25%, 99%);
+  --txt-white: hsl(0, 0%, 100%);
+  --txt-accent: hsl(221, 14%, 31%);
+  --prev-input: hsl(0, 0%, 70%);
+  --correct-header: hsl(0, 0%, 100%);
 }
 
 :root[data-theme="theme-2"] {
@@ -18,12 +23,17 @@
   --screen-bg: hsl(0, 0%, 93%);
   --txtkey-bg: hsl(185, 42%, 37%);
   --txtkey-shadow: hsl(185, 58%, 25%);
+  --txtkey-hover: hsl(185, 42%, 47%);
   --eqkey-bg: hsl(25, 98%, 40%);
   --eqkey-shadow: hsl(25, 99%, 27%);
+  --eqkey-hover: hsl(25, 98%, 50%);
   --key-bg: hsl(30, 25%, 89%);
   --key-shadow: hsl(28, 16%, 65%);
-  --white: hsl(0, 0%, 100%);
-  --grayish-blue: hsl(60, 10%, 19%);
+  --key-hover: hsl(30, 25%, 99%);
+  --txt-white: hsl(0, 0%, 100%);
+  --txt-accent: hsl(60, 10%, 19%);
+  --prev-input: hsl(60, 10%, 30%);
+  --correct-header: hsl(60, 10%, 19%);
 }
 
 :root[data-theme="theme-3"] {
@@ -32,12 +42,17 @@
   --screen-bg: hsl(268, 71%, 12%);
   --txtkey-bg: hsl(281, 89%, 26%);
   --txtkey-shadow: hsl(285, 91%, 52%);
+  --txtkey-hover: hsl(281, 89%, 36%);
   --eqkey-bg: hsl(176, 100%, 44%);
   --eqkey-shadow: hsl(177, 92%, 70%);
+  --eqkey-hover: hsl(176, 100%, 34%);
   --key-bg: hsl(268, 47%, 21%);
   --key-shadow: hsl(290, 70%, 36%);
-  --white: hsl(0, 0%, 100%);
-  --grayish-blue: hsl(198, 20%, 13%);
+  --key-hover: hsl(268, 47%, 31%);
+  --txt-white: hsl(0, 0%, 100%);
+  --txt-accent: hsl(52, 100%, 62%);
+  --prev-input: hsl(52, 50%, 45%);
+  --correct-header: hsl(52, 100%, 62%);
 }
 
 * {
@@ -54,7 +69,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--white);
+  color: var(--correct-header);
 }
 
 .background {
@@ -143,6 +158,10 @@ body {
   transform: translate3d(2.25rem, -1.1rem, 0);
 }
 
+.toggleSlider:hover {
+  background-color: var(--eqkey-hover);
+}
+
 .calcScreen {
   display: flex;
   flex-direction: column;
@@ -151,6 +170,7 @@ body {
   word-wrap: break-word;
   word-break: break-all;
   background-color: var(--screen-bg);
+  color: var(--correct-header);
   width: 400px;
   min-height: 110px;
   border-radius: 10px;
@@ -164,7 +184,7 @@ body {
 
 .calcScreen #prevInput {
   font-size: 16px;
-  color: #bfbfbf;
+  color: var(--prev-input);
 }
 
 .calcBody {
@@ -185,7 +205,7 @@ body {
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
   font-size: 28px;
-  color: var(--grayish-blue);
+  color: var(--txt-accent);
   background-color: var(--key-bg);
   width: 80px;
   height: 50px;
@@ -195,7 +215,7 @@ body {
   border-bottom: 3px solid var(--key-shadow);
 }
 .btn:hover {
-  background-color: #fdfcfc;
+  background-color: var(--key-hover);
   cursor: pointer;
 }
 
@@ -247,39 +267,39 @@ body {
 #btn-del {
   background-color: var(--txtkey-bg);
   font-size: 24px;
-  color: var(--white);
+  color: var(--txt-white);
   border-bottom: 3px solid var(--txtkey-shadow);
   grid-column: 4/5;
   grid-row: -5/-4;
 }
 #btn-del:hover {
-  background-color: #808bac;
+  background-color: var(--txtkey-hover);
   cursor: pointer;
 }
 
 #btn-res {
-  background-color: hsl(225, 21%, 49%);
+  background-color: var(--txtkey-bg);
   font-size: 24px;
-  color: hsl(0, 0%, 100%);
+  color: var(--txt-white);
   width: 170px;
-  border-bottom: 3px solid hsl(224, 28%, 35%);
+  border-bottom: 3px solid var(--txtkey-shadow);
   grid-column: 1/3;
 }
 #btn-res:hover {
-  background-color: #808bac;
+  background-color: var(--txtkey-hover);
   cursor: pointer;
 }
 
 #btn-eq {
-  background-color: hsl(6, 63%, 50%);
+  background-color: var(--eqkey-bg);
   font-size: 22px;
-  color: hsl(0, 0%, 100%);
+  color: var(--txt-white);
   width: 170px;
-  border-bottom: 3px solid hsl(6, 70%, 34%);
+  border-bottom: 3px solid var(--eqkey-shadow);
   grid-column: 3/5;
 }
 #btn-eq:hover {
-  background-color: #d96659;
+  background-color: var(--eqkey-hover);
   cursor: pointer;
 }
 
