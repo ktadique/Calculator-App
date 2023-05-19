@@ -146,6 +146,7 @@ body {
   height: 15px;
   left: 5px;
   border-radius: 50%;
+  transform: translate3d(0, -1.1rem, 0);
   transition: all 0.4s ease;
 }
 .toggleBar #t1:checked ~ .toggleSlider {
@@ -301,6 +302,7 @@ body {
 #btn-eq:hover {
   background-color: var(--eqkey-hover);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .attribution {

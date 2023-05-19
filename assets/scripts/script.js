@@ -19,6 +19,7 @@ class Calculator {
 
   //function to append digit(as a string) to the end of the string
   appendNumber(number) {
+    if (number === "." && this.input.includes(".")) return;
     this.input = this.input.toString() + number.toString();
   }
 
